@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Fuzzer {
+    // comment 1
     public static void main(String[] args) {
         if (args.length != 1) {
             System.err.println("Usage: java Fuzzer.java \"<command_to_fuzz>\"");
