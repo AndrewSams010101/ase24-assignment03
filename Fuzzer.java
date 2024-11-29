@@ -24,7 +24,6 @@ public class Fuzzer {
         String seedInput = "<html a=\"value\">...</html>";
         Random random = new Random();
 
-        // Generate inputs for all five test cases
         List<List<String>> testInputs = new ArrayList<>();
         testInputs.add(generateRandomStrings(random, 1, 1)); // Test 1: Random strings
         testInputs.add(generateRandomIntegers(random, 1));   // Test 2: Random integers
@@ -64,13 +63,11 @@ public class Fuzzer {
             try {
                 Process process = builder.start();
 
-                // Send the input to the process
                 try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()))) {
                     writer.write(input);
                     writer.flush();
                 }
 
-                // Capture the output and error streams
                 String output = readStreamIntoString(process.getInputStream());
                 String error = readStreamIntoString(process.getErrorStream());
 
@@ -88,7 +85,7 @@ public class Fuzzer {
 
             } catch (IOException | InterruptedException e) {
                 System.err.printf("Error running command with input '%s': %s\n", input, e.getMessage());
-                System.exit(1); // Exit with a general error code in case of exceptions
+                System.exit(1);
             }
         }
 
