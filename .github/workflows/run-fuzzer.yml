@@ -19,11 +19,6 @@ jobs:
           java-version: '23'
           distribution: 'temurin'
 
-      - name: Build html_parser
-        run: |
-          chmod +x ./html_parser
-          echo "html_parser built successfully"
-
       - name: Compile Fuzzer
         run: javac Fuzzer.java
 
