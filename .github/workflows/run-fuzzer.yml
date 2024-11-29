@@ -24,5 +24,5 @@ jobs:
 
       - name: Run Fuzzer against html_parser
         run: |
-          java Fuzzer ./html_parser_mac_universal
+          java Fuzzer ./html_parser_linux_x86_64
         continue-on-error: false  # Fail the workflow if the fuzzer returns a non-zero exit code
